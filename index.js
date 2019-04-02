@@ -1,12 +1,12 @@
 const fs = require("fs");
 const protoLoader = require('@grpc/proto-loader');
-// const grpc = require('@grpc/grpc-js');
-const grpc = require('grpc');
+const grpc = require('@grpc/grpc-js');
+// const grpc = require('grpc');
 // request works when using grpc
 // but not when using @grpc/grpc-js
 
-var lndCert = fs.readFileSync("tls.cert");
-var credentials = grpc.credentials.createSsl(lndCert);
+// var lndCert = fs.readFileSync("tls.cert");
+var credentials = grpc.credentials.createSsl(null);
 
 const grpcOptions = {
   keepCase: true,
